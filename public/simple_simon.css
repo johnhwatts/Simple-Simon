@@ -1,6 +1,10 @@
 .game-board {
 	height: 500px;
+	width: 50%;
+	margin: 0 auto;
 	margin-bottom: 20px;
+	box-shadow: 10px 10px 5px #888888;
+	border-radius: 10px;
 }
  
 h1 {
@@ -40,3 +44,4 @@ h2 {
 	background-color: green;
 	border-radius: 0px 0px 10px 0px;
 }
+
