@@ -1,12 +1,14 @@
 "use strict";
 
 var sequence = [];
+var userInput = [];
 var level = 1;
+var clickCounter = 0;
 var elem = '.button';
 
 var generateRandomArray = function(elem, max) {
 
-var randomIndex = Math.floor(Math.random() * 4) + 1;
+var randomIndex = Math.floor(Math.random() * 4);
 sequence.push(randomIndex);
 }
 
@@ -23,16 +25,16 @@ var playSequence = function(seq, elem) {
 var i=0;
 	var intervalId = setInterval(function() {
 		switch(seq[i]){
-			case 1 :
+			case 0 :
 				flash("#red");
 				break;
-			case 2 :
+			case 1 :
 				flash("#blue");
 				break;
-			case 3 : 
+			case 2 : 
 				flash("#yellow");
 				break;
-			case 4 :
+			case 3 :
 				flash("#green");
 				break;
 		}
@@ -67,6 +69,9 @@ $("#start").click(function() {
 $("#restart").click(function() {
   $("#start").show();
   $("#restart").hide();
+  // resetScore();
+  // resetLevel();
+  init(1);
 });
 
 
