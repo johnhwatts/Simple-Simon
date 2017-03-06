@@ -65,7 +65,7 @@ function playSequence(seq, elem) {
         if (i == seq.length) {
             disableControls = false; //if round has ended re-enable controls
         }
-    }, 500)
+    }, 700)
 }
 //apply click events to buttons
 function applyClicks() {

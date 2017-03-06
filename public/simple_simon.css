@@ -5,6 +5,7 @@ body {
   -o-background-size: cover;
   background-size: cover;;
 	font-family: 'Anton', sans-serif;
+
 }
 
 .container {
@@ -33,34 +34,34 @@ h2 {
 
 .red {
 	height: 250px;
-	border: 1px solid black;
+	border: 5px solid black;
 	background-color: red;
-	border-radius: 10px 0px 0px 0px;
+	border-radius: 200px 0px 0px 0px;
 }
 
 .blue {
 	height: 250px;
-	border: 1px solid black;
+	border: 5px solid black;
 	background-color: blue;
-	border-radius: 0px 10px 0px 0px;
+	border-radius: 0px 200px 0px 0px;
 }
 
 .yellow {
 	height: 250px;
-	border: 1px solid black;
+	border: 5px solid black;
 	background-color: yellow;
-	border-radius: 0px 0px 0px 10px;
+	border-radius: 0px 0px 0px 200px;
 }
 
 .green {
 	height: 250px;
-	border: 1px solid black;
+	border: 5px solid black;
 	background-color: green;
-	border-radius: 0px 0px 10px 0px;
+	border-radius: 0px 0px 200px 0px;
 }
 
 #next {
-z-index:9999;
+z-index:9999; /*element with a larger z-index generally covers an element with a lower one.*/
 position: absolute;
    width: 50%;
    top: 50%;
@@ -81,4 +82,8 @@ left:50%;
 
 .button {
 	cursor: pointer;
+}
+
+.audio {
+
 }
