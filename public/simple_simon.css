@@ -45,3 +45,13 @@ h2 {
 	border-radius: 0px 0px 10px 0px;
 }
 
+#next {
+	height: 5%;
+	width: 50%;
+	text-align: center;
+	background-color: 
+}
+
+.button {
+	cursor: pointer;
+}
