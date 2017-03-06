@@ -1,15 +1,13 @@
 "use strict";
 
-var sequence = [];
-var userInput = [];
-var level = 1;
-var clickCounter = 0;
-var elem = '.button';
-var disableControls = [];
-
+var sequence = []; // current level recorded sequence
+var userInput = []; //record of user input for current round
+var clickCounter = 0; //how many clicks have been made to determine the end of round
+var currentLevel = 1; //starting level
+var currentScore = 0; //current score
+var disableControls = true; //stops controls working as a boolean
 //functions
-
-
+//add to score if user scores point - increase by num
 function score(num) {
     currentScore = parseInt(currentScore + num);
     $('#score').text('Score: ' + currentScore);
@@ -69,70 +67,58 @@ function playSequence(seq, elem) {
         }
     }, 1000)
 }
-
-//Function to start game 
-	//It's going to call next level function
-var init = function(lev) {
-$('#level').text('Level: ' + lev);
-
-generateRandomArray(elem, lev);
-playSequence(sequence, elem);
-console.log(sequence);
-};
-
 //apply click events to buttons
-var applyClicks = function(elem) {
-	$(elem).each(function(i) {
-	$(this).click(function() {
-	// if (!disableControls) {
-	// 	flash($(this));
-	// 	userInput.push(i);
-	if (userInput[clickCounter] == sequence[clickCounter]) { //if click is correct
-		score(1);
-	if (userInput.length == sequence.length) { //if user has completed clicks for this round
-		disableControls = true;
-		currentLevel++;
-	$('#next').show(); //show next level button
-	}
-	}
-	else { //if click is false - RESET GAME
-		alert('You failed, sucker!!! Final Score: ' + getScore());
-		resetScore();
-		resetLevel();
-		disableControls = true;
-	}
-	clickCounter++;
-	});
-	});
+function applyClicks() {
+    $('.button').each(function(i) {
+        $(this).click(function() {
+            if (!disableControls) {
+                flash($(this));
+                userInput.push(i);
+                if (userInput[clickCounter] == sequence[clickCounter]) { //if click is correct (could separate out into function if required)
+                    score(1);
+                    if (userInput.length == sequence.length) { //if user has completed clicks for this round
+                        disableControls = true;
+                        currentLevel++;
+                        $('#next').show(); //show next level button
+                    }
+                } else { //if click is false - RESET GAME (could separate out into function if required)
+                    alert('You failed, sucker!!! Final Score: ' + getScore());
+                    resetScore();
+                    resetLevel();
+                    disableControls = true;
+                }
+                clickCounter++;
+            }
+        })
+    })
 };
+//Start current level
+function start(lev) {
+    $('#level').text('Level: ' + lev);
+    $('#next').hide();
+    userInput = [];
+    sequence = [];
+    clickCounter = 0;
+    var elem = '.button';
+    generateRandomArray(elem, lev);
+    playSequence(sequence, elem, 0);
+};
+//some click callbacks
+applyClicks(); // apply logic on buttons
 
-
-//event to fire start game function when start button clicked then deactivate start game button
- 
-$('#start').click(function() {
-  $('#start').hide();
-  $('#restart').show();
-  init(1);
+//start function: shows up on page load (also hides the reset button)
+$("#start").on("click", function() {
+    $("#start").hide();
+    $("#restart").show();
+    start(1);
 });
-
-//Restart function 
-$('#restart').click(function() {
-  $('#start').show();
-  $('#restart').hide();
-  resetScore();
-  resetLevel();
-  init(1);
-});
-
-applyClicks('.button'); // apply logic on buttons
-
-//Next level function
+//next level function
 $('#next').click(function() {
-init(currentLevel);
+    start(currentLevel);
 });
-
-
-
-//Game over function to reset game and reactivate start game button
-
-	
+//restart button 
+$('#restart').click(function() {
+    resetScore();
+    resetLevel();
+    start(1);
+});
