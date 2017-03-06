@@ -1,20 +1,29 @@
+body {
+	background-image: 
+}
+
+.container {
+	background-color: black;
+}
+
 .game-board {
 	height: 500px;
 	width: 50%;
 	margin: 0 auto;
 	margin-bottom: 20px;
-	box-shadow: 10px 10px 5px #888888;
 	border-radius: 10px;
 }
  
 h1 {
 	text-align: center;
 	margin-bottom: 20px;
+	color: white;
 }
 
 h2 {
 	text-align: center;
 	margin-bottom: 20px;
+	color: white;
 }
 
 .red {
@@ -46,8 +55,6 @@ h2 {
 }
 
 #next {
-	height: 5%;
-	width: 50%;
 	text-align: center;
 	background-color: 
 }

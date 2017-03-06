@@ -1,59 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- responsive CSS -->
-        <meta charset="UTF-8">
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+    <!-- responsive CSS -->
+    <meta charset="UTF-8"><!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-        <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-       
-        <!-- latest compiled and minified CSS -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        
-        <!-- custom CSS -->
-        <link rel="stylesheet" href="simple_simon.css">
-        
-        <title>Simple Simon</title>
-    </head>
-    
-    <body>
-        <main class="container">
-            <h1>Simple Simon</h1>
-            <h2 id="level">Level: 0</h2>
-            <h2 id="score">Score: 0</h2>
-            <div class="row">
-                <div class="game-board">
-                    <div id="next" style="display:none">Next Level</div>
-                    <div class="button red col-xs-6" id="red" ></div>
-                    <div class="button blue col-xs-6" id="blue"></div>
-                    <div class="row"></div>
-                    <div class="button yellow col-xs-6" id="yellow"></div>
-                    <div class="button green col-xs-6" id="green" ></div>
-                </div>   
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet"><!-- latest compiled and minified CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- custom CSS -->
+    <link href="simple_simon.css" rel="stylesheet">
+    <title>Simple Simon</title>
+</head>
+<body>
+    <main class="container">
+        <h1>Simple Simon</h1>
+        <h2 id="level">Level: 0</h2>
+        <h2 id="score">Score: 0</h2>
+        <div class="row">
+            <button class="col-xs-2 col-xs-offset-5 btn btn-default" id="start">Start!</button>
+        </div>
+        <div class="row">
+            <button class="col-xs-2 col-xs-offset-5 btn btn-default" id="restart">Restart!</button>
+        </div>
+        <div id="next" style="display:none" class= "col-xs-2 col-xs-offset-5 btn btn-default">
+                    Next Level
+                </div>
+        <div class="row">
+            <div class="game-board">
+                <div class="button red col-xs-6" id="red"></div>
+                <div class="button blue col-xs-6" id="blue"></div>
+                <div class="row"></div>
+                <div class="button yellow col-xs-6" id="yellow"></div>
+                <div class="button green col-xs-6" id="green"></div>
             </div>
-            
-            <div class="row">
-                <button id="start" class="col-xs-2 col-xs-offset-5 btn btn-default">Start!</button>
-            </div>
-           
-            <div class="row">
-                <button id="restart" class="col-xs-2 col-xs-offset-5 btn btn-default">Restart!</button>
-            </div>
-            
-
-               
-            
-        </main>
-
-
-
-        <!-- minified jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        </div>
         
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-        <!-- Custom JS -->
-        <script src="simple_simon.js"></script>
-    </body>
+    </main><!-- minified jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script> <!-- Latest compiled and minified JavaScript -->
+     
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script> <!-- Custom JS -->
+     
+    <script src="simple_simon.js">
+    </script>
+</body>
+</html>
 </html>
