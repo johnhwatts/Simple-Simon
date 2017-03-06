@@ -6,6 +6,10 @@ var level = 1;
 var clickCounter = 0;
 var elem = '.button';
 
+var getScore = function() {
+
+}
+
 var generateRandomArray = function(elem, max) {
 
 var randomIndex = Math.floor(Math.random() * 4);
@@ -26,16 +30,16 @@ var i=0;
 	var intervalId = setInterval(function() {
 		switch(seq[i]){
 			case 0 :
-				flash("#red");
+				flash('#red');
 				break;
 			case 1 :
-				flash("#blue");
+				flash('#blue');
 				break;
 			case 2 : 
-				flash("#yellow");
+				flash('#yellow');
 				break;
 			case 3 :
-				flash("#green");
+				flash('#green');
 				break;
 		}
 		if(i < seq.length) {
@@ -59,25 +63,26 @@ console.log(sequence)
 
 //event to fire start game function when start button clicked then deactivate start game button
  
-$("#start").click(function() {
-  $("#start").hide();
-  $("#restart").show();
+$('#start').click(function() {
+  $('#start').hide();
+  $('#restart').show();
   init(1);
 });
 
 //Restart function 
-$("#restart").click(function() {
-  $("#start").show();
-  $("#restart").hide();
+$('#restart').click(function() {
+  $('#start').show();
+  $('#restart').hide();
   // resetScore();
   // resetLevel();
   init(1);
 });
 
 
-//Next round function
-	//add a random string to the sequence
-	//call play sequnce function
+//Next level function
+	$('#next').click(function() {
+	init(currentLevel);
+});
 
 //Play sequence function(color)
 	// check the color then animate the correct color
