@@ -10,56 +10,64 @@ var disableControls = [];
 //functions
 
 
-//add to score if user scores point - increase by num
 function score(num) {
-currentScore = parseInt(currentScore + num);
-$('#score').text('Score: ' + currentScore);
+    currentScore = parseInt(currentScore + num);
+    $('#score').text('Score: ' + currentScore);
 };
-
 //get the current score
 function getScore() {
-return currentScore;
+    return currentScore;
 };
-
-var generateRandomArray = function(elem, max) {
-
-var randomIndex = Math.floor(Math.random() * 4);
-sequence.push(randomIndex);
-}
-
-//Change opacity of buttons to flash during random sequence
-var flash = function(elem) {
-$(elem).css('opacity', '0.4');
-setTimeout(function(){
-$(elem).css('opacity', '1');
-}, 500);
-}
-
-//Play sequence function(color)
-var playSequence = function(seq, elem) {
-var i=0;
-	var intervalId = setInterval(function() {
-		switch(seq[i]){
-			case 0 :
-				flash('#red');
-				break;
-			case 1 :
-				flash('#blue');
-				break;
-			case 2 : 
-				flash('#yellow');
-				break;
-			case 3 :
-				flash('#green');
-				break;
-		}
-		if(i < seq.length) {
-			i++;
-		} else {
-			clearInterval(intervalId);
-		}
-
-	},1000)
+//reset score if user fails
+function resetScore() {
+    $('#score').text('Score: 0');
+};
+//reset game if user fails
+function resetLevel() {
+    currentLevel = 1;
+    $('#level').text('Level: ' + 0);
+};
+//generate level sequence - accepts a CSS selector and amount of numbers required
+function generateRandomArray(elem, index) {
+    for (var i = 0; i < index; i++) {
+        var randomIndex = Math.floor(Math.random() * 4);
+        sequence.push(randomIndex);
+    }
+};
+//flash an element on click or to show sequence
+function flash(elem) {
+    $(elem).css('opacity', '0.6');
+    setTimeout(function() {
+        $(elem).css('opacity', '1');
+    }, 500);
+};
+//play entire sequence before user starts games
+function playSequence(seq, elem) {
+    var i = 0;
+    var intervalId = setInterval(function() {
+        switch (seq[i]) {
+            case 0:
+                flash('#red');
+                break;
+            case 1:
+                flash('#blue');
+                break;
+            case 2:
+                flash('#yellow');
+                break;
+            case 3:
+                flash('#green');
+                break;
+        }
+        if (i < seq.length) {
+            i++;
+        } else {
+            clearInterval(intervalId);
+        }
+        if (i == seq.length) {
+            disableControls = false; //if round has ended re-enable controls
+        }
+    }, 1000)
 }
 
 //Function to start game 
@@ -123,10 +131,6 @@ $('#next').click(function() {
 init(currentLevel);
 });
 
-//reset score if user fails
-resetScore = function() {
-jQuery('#score').text('Score: 0');
-};
 
 
 //Game over function to reset game and reactivate start game button
