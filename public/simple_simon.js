@@ -9,10 +9,16 @@ var currentLevel = 1; //starting level
 var currentScore = 0; //current score
 var disableControls = true; //stops controls working as a boolean
 var obj = document.createElement("audio"); //creates a sound to play on click
-        obj.src="https://kahimyang.com/resources/sound/click.mp3";
-        obj.volume=0.20;
-        obj.autoPlay=false;
-        obj.preLoad=true; 
+    obj.src="https://kahimyang.com/resources/sound/click.mp3";
+    obj.volume=0.40;
+    obj.autoPlay=false;
+    obj.preLoad=true; 
+var audio = document.getElementById("wrong");
+$("#wrong").prop('volume', 1.0);
+var backSound = document.getElementById("backgroundSound");
+	backSound.volume = 0.1;
+	
+
 
 //functions
 //add to score if user scores point - increase by num
@@ -82,15 +88,16 @@ function applyClicks() {
             if (!disableControls) {
                 flash($(this));
                 userInput.push(i);
-                if (userInput[clickCounter] == sequence[clickCounter]) { //if click is correct (could separate out into function if required)
+                if (userInput[clickCounter] == sequence[clickCounter]) { //if click is correct
                     score(1);
                     if (userInput.length == sequence.length) { //if user has completed clicks for this round
                         disableControls = true;
                         currentLevel++;
                         $('#next').show(); //show next level button
                     }
-                } else { //if click is false - RESET GAME (could separate out into function if required)
-                    alert('You failed, sucker!!! Final Score: ' + getScore());
+                } else { //if click is false
+                    $('#wrongAnswer').show(); // show trump gif
+                    audio.play();
                     resetScore();
                     resetLevel();
                     disableControls = true;
@@ -128,6 +135,8 @@ $('#next').click(function() {
 });
 //restart button 
 $('#restart').click(function() {
+    $('#wrongAnswer').hide();
+    audio.pause();
     resetScore();
     resetLevel();
     start(1);
@@ -137,6 +146,5 @@ $(".playSound").click(function() {
     obj.play();
 });
 
-});
-   
+});   
  

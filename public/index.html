@@ -12,6 +12,9 @@
 <body>
     <main class="container">
         <div class="playSound" id="next" style="display:none">Click to go to next level</div>
+        <img src="trumpwrong.gif" style="display:none" id="wrongAnswer">
+        <audio src="wrongSound.mp3" type="audio/mpeg" id="wrong">
+        </audio>
         <h1>Simple Simon</h1>
         <h2 id="level">Level: 0</h2>
         <h2 id="score">Score: 0</h2>
@@ -31,7 +34,7 @@
                 <div class="button green col-xs-6 playSound" id="green"></div>
             </div>
         </div>
-        <audio autoplay controls preload="auto" class="col-xs-2 col-xs-offset-5"3>
+        <audio autoplay controls preload="auto" class="col-xs-2 col-xs-offset-5" id="backgroundSound">
             <source src="The-Neon-Droid---Sonny-s-Justice_mp3ify-dot-com.mp4" type="audio/mpeg">
         </audio>
     </main>

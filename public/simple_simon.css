@@ -83,3 +83,23 @@ h2 {
 .button {
     cursor: pointer;
 }
+
+#wrongAnswer {
+    z-index:9999; /*element with a larger z-index generally covers an element with a lower one.*/
+    position: absolute;
+    width: 50%;
+    top: 40%;
+    left:50%;
+    margin-left: -25%;
+    text-align: center;
+    height: 400px;
+    font-size: 20px;
+    line-height: 50px;
+    vertical-align: middle;
+    color: #333;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+    cursor:pointer;
+}
