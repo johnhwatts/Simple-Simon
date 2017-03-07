@@ -1,11 +1,19 @@
+$( document ).ready(function() {
+
 "use strict";
 
 var sequence = []; // current level recorded sequence
-var userInput = []; //record of user input for current round
-var clickCounter = 0; //how many clicks have been made to determine the end of round
+var userInput = []; //record of user input for current level
+var clickCounter = 0; //how many clicks have been made to determine the end of level
 var currentLevel = 1; //starting level
 var currentScore = 0; //current score
 var disableControls = true; //stops controls working as a boolean
+var obj = document.createElement("audio"); //creates a sound to play on click
+        obj.src="https://kahimyang.com/resources/sound/click.mp3";
+        obj.volume=0.20;
+        obj.autoPlay=false;
+        obj.preLoad=true; 
+
 //functions
 //add to score if user scores point - increase by num
 function score(num) {
@@ -92,6 +100,7 @@ function applyClicks() {
         })
     })
 };
+
 //Start current level
 function start(lev) {
     $('#level').text('Level: ' + lev);
@@ -103,6 +112,7 @@ function start(lev) {
     generateRandomArray(elem, lev);
     playSequence(sequence, elem, 0);
 };
+
 //some click callbacks
 applyClicks(); // apply logic on buttons
 
@@ -122,4 +132,11 @@ $('#restart').click(function() {
     resetLevel();
     start(1);
 });
+//play sound on click of element
+$(".playSound").click(function() {
+    obj.play();
+});
 
+});
+   
+ 

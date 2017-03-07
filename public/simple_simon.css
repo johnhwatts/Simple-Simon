@@ -1,89 +1,85 @@
 body {
-	background: url(tvwithsound.gif) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;;
-	font-family: 'Anton', sans-serif;
+    background: url(tvwithsound.gif) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;;
+    font-family: 'Anton', sans-serif;
 
 }
 
 .container {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 .game-board {
-	height: 500px;
-	width: 50%;
-	margin: 0 auto;
-	margin-bottom: 20px;
-	border-radius: 10px;
+    height: 500px;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
  
 h1 {
-	text-align: center;
-	margin-bottom: 20px;
-	color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
 }
 
 h2 {
-	text-align: center;
-	margin-bottom: 20px;
-	color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
 }
 
 .red {
-	height: 250px;
-	border: 5px solid black;
-	background-color: red;
-	border-radius: 200px 0px 0px 0px;
+    height: 250px;
+    border: 5px solid black;
+    background-color: red;
+    border-radius: 200px 0px 0px 0px;
 }
 
 .blue {
-	height: 250px;
-	border: 5px solid black;
-	background-color: blue;
-	border-radius: 0px 200px 0px 0px;
+    height: 250px;
+    border: 5px solid black;
+    background-color: blue;
+    border-radius: 0px 200px 0px 0px;
 }
 
 .yellow {
-	height: 250px;
-	border: 5px solid black;
-	background-color: yellow;
-	border-radius: 0px 0px 0px 200px;
+    height: 250px;
+    border: 5px solid black;
+    background-color: yellow;
+    border-radius: 0px 0px 0px 200px;
 }
 
 .green {
-	height: 250px;
-	border: 5px solid black;
-	background-color: green;
-	border-radius: 0px 0px 200px 0px;
+    height: 250px;
+    border: 5px solid black;
+    background-color: green;
+    border-radius: 0px 0px 200px 0px;
 }
 
 #next {
-z-index:9999; /*element with a larger z-index generally covers an element with a lower one.*/
-position: absolute;
-   width: 50%;
-   top: 50%;
-left:50%;
-   margin-left: -25%;
-   text-align: center;
-   height: 50px;
-   font-size: 20px;
-   line-height: 50px;
-   vertical-align: middle;
-   color: #333;
-   background-color: white;
-   border-radius: 10px;
-   border: 2px solid black;
-   font-weight: bold;
-   cursor:pointer;
+    z-index:9999; /*element with a larger z-index generally covers an element with a lower one.*/
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left:50%;
+    margin-left: -25%;
+    text-align: center;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    vertical-align: middle;
+    color: #333;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-weight: bold;
+    cursor:pointer;
 }
 
 .button {
-	cursor: pointer;
-}
-
-.audio {
-
+    cursor: pointer;
 }

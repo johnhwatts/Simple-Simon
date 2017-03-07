@@ -11,27 +11,27 @@
 </head>
 <body>
     <main class="container">
-        <div id="next" style="display:none">Click to go to next level</div>
+        <div class="playSound" id="next" style="display:none">Click to go to next level</div>
         <h1>Simple Simon</h1>
         <h2 id="level">Level: 0</h2>
         <h2 id="score">Score: 0</h2>
         <div class="row">
-            <button class="col-xs-2 col-xs-offset-5 btn btn-default" id="start">Start!</button>
+            <button class="col-xs-2 col-xs-offset-5 btn btn-default playSound" id="start">Start!</button>
         </div>
         <div class="row">
-            <button class="col-xs-2 col-xs-offset-5 btn btn-default" id="restart">Restart!</button>
+            <button class="col-xs-2 col-xs-offset-5 btn btn-default playSound" id="restart">Restart!</button>
         </div>
         
         <div class="row">
             <div class="game-board">
-                <div class="button red col-xs-6" id="red"></div>
-                <div class="button blue col-xs-6" id="blue"></div>
+                <div class="button red col-xs-6 playSound" id="red"></div>
+                <div class="button blue col-xs-6 playSound" id="blue"></div>
                 <div class="row"></div>
-                <div class="button yellow col-xs-6" id="yellow"></div>
-                <div class="button green col-xs-6" id="green"></div>
+                <div class="button yellow col-xs-6 playSound" id="yellow"></div>
+                <div class="button green col-xs-6 playSound" id="green"></div>
             </div>
         </div>
-        <audio autoplay controls preload="auto" class="col-xs-2 col-xs-offset-5">
+        <audio autoplay controls preload="auto" class="col-xs-2 col-xs-offset-5"3>
             <source src="The-Neon-Droid---Sonny-s-Justice_mp3ify-dot-com.mp4" type="audio/mpeg">
         </audio>
     </main>
@@ -43,7 +43,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
     <!-- Custom JS -->
-     <script src="simple_simon.js"></script>
+    <script src="simple_simon.js"></script>
 
 </body>
 </html>
